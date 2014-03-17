@@ -19,7 +19,7 @@ gitolite安装和配置
 #####4:管理#####
 在客户端的.ssh目录新建config文件，输入以下内容保存
 
-    host git
+    host gitserv
     user git
     hostname 192.168.2.100    //gitolite服务器ip
     port 22
@@ -39,7 +39,7 @@ Windows用户使用git bush
 在.ssh目录下创建文件 config     //无文件后缀名
 在config文件中输入如下内容保存(username为上一步的username)：
 
-    host username
+    host gitserv
     user git
     hostname 192.168.2.100
     port 22
