@@ -28,7 +28,7 @@ clone项目至本地:
 
 管理员操作(安装与配置)
 --------------
-#####1：安装git#####
+#####1: 安装git#####
 
     $yum -y install git
 #####2: 新建git用户#####
@@ -43,7 +43,7 @@ clone项目至本地:
     $ssh-keygen –f ~/.ssh/git  //（管理员在客户端操作）客户端生产key并上传到服务端
     $~/bin/gitolite setup -pk ~/git.pub
     
-#####4:管理（管理员在客户端操作）#####
+#####4: 管理（管理员在客户端操作）#####
 在客户端的.ssh目录新建config文件，输入以下内容保存
 
     host gitserv
@@ -56,7 +56,7 @@ clone项目至本地:
     $git clone gitserv:gitolite-admin  
 其中conf/gitolite文件是对repo的配置管理
 keydir目录是对用户的配置
-#####5:新增用户（管理员在客户端操作）#####
+#####5: 新增用户（管理员在客户端操作）#####
 将用户发送的pub文件放到gitolite-admin项目的keydir目录并上传至服务器
 
 
