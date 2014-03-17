@@ -7,7 +7,7 @@ gitolite安装和配置
 Windows用户使用git bush
 输入命令生产key(username为邮箱的@前面部分)：
 
-    $ssh-keygen -f ~/.ssh/username
+    $ ssh-keygen -f ~/.ssh/username
 将.ssh目录下的username.pub文件复制一份发送给管理员
 
 在.ssh目录下创建文件 config          (无后缀名)
@@ -22,7 +22,7 @@ Windows用户使用git bush
     
 clone项目至本地:
 
-    $git clone gitserv:testing
+    $ git clone gitserv:testing
 
 
 
@@ -30,18 +30,18 @@ clone项目至本地:
 --------------
 #####1: 安装git#####
 
-    $yum -y install git
+    $ yum -y install git
 #####2: 新建git用户#####
 
-    $useradd --system --shell /bin/bash --create-home git
+    $ useradd --system --shell /bin/bash --create-home git
 #####3:安装#####
 
-    $su - git
-    $mkdir bin
-    $git clone git://github.com/sitaramc/gitolite.git
-    $~/gitolite/install -to ~/bin
-    $ssh-keygen –f ~/.ssh/git  //（管理员在客户端操作）客户端生产key并上传到服务端
-    $~/bin/gitolite setup -pk ~/git.pub
+    $ su - git
+    $ mkdir bin
+    $ git clone git://github.com/sitaramc/gitolite.git
+    $ ~/gitolite/install -to ~/bin
+    $ ssh-keygen –f ~/.ssh/git  //（管理员在客户端操作）客户端生产key并上传到服务端
+    $ ~/bin/gitolite setup -pk ~/git.pub
     
 #####4: 管理（管理员在客户端操作）#####
 在客户端的.ssh目录新建config文件，输入以下内容保存
@@ -53,7 +53,7 @@ clone项目至本地:
     identityfile ~/.ssh/git
 将gitolite-admin clone下来可对gitolite进行管理
 
-    $git clone gitserv:gitolite-admin  
+    $ git clone gitserv:gitolite-admin  
 其中conf/gitolite文件是对repo的配置管理
 keydir目录是对用户的配置
 #####5: 新增用户（管理员在客户端操作）#####
