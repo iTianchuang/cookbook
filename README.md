@@ -60,3 +60,7 @@ keydir目录是对用户的配置
 将用户发送的pub文件放到gitolite-admin项目的keydir目录并上传至服务器
 
 
+
+附: [git使用教程](http://git-scm.com/book/zh/%E8%B5%B7%E6%AD%A5)
+
+
