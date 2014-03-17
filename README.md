@@ -2,28 +2,25 @@ gitolite安装和配置
 ==============
 普通用户操作
 --------------
-打开git命令行
-
-Windows用户使用git bush
-输入命令生产key(username为邮箱的@前面部分)：
+1. 生成用户的密钥对(请注意将username更换为用户名)：
 
     $ ssh-keygen -f ~/.ssh/username
-将.ssh目录下的username.pub文件复制一份发送给管理员
 
-在.ssh目录下创建文件 config          (无后缀名)
+此命令将生成密钥对: ~/.ssh/username 和 ~/.ssh/username.pub
+2. 将公钥文件username.pub发送给管理员
 
-在config文件中输入如下内容并保存(注意：username为上一步的username)：
+3. 在.ssh目录下创建文件 config, 并输入如下内容
+(注意：username为上一步的username):
 
-    host gitserv
-    user git
-    hostname 192.168.2.100
-    port 22
-    identityfile ~/.ssh/username
+    host gitserv                 # gitolite所在机器的别名
+    user git                     # 用来访问gitolite库的用户名
+    hostname 192.168.2.100       # gitolite所在机器的IP地址
+    port 22                      # sshd的端口
+    identityfile ~/.ssh/username # 用来访问gitolite库的用户的私钥文件
     
-clone项目至本地:
+4. clone项目库至本地:
 
-    $ git clone gitserv:testing
-
+    $ git clone gitserv:testing.git  #testing.git为库名
 
 
 管理员操作(安装与配置)
@@ -58,8 +55,6 @@ clone项目至本地:
 keydir目录是对用户的配置
 #####5: 新增用户（管理员在客户端操作）#####
 将用户发送的pub文件放到gitolite-admin项目的keydir目录并上传至服务器
-
-
 
 附: [git使用教程](http://git-scm.com/book/zh/%E8%B5%B7%E6%AD%A5)
 
