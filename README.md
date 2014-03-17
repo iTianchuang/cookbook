@@ -48,7 +48,7 @@ clone项目至本地:
 
     host gitserv
     user git
-    hostname 192.168.2.100    //gitolite服务器ip
+    hostname 192.168.2.100
     port 22
     identityfile ~/.ssh/git
 将gitolite-admin clone下来可对gitolite进行管理
