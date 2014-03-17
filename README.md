@@ -2,23 +2,23 @@ gitolite安装和配置
 ==============
 普通用户操作
 --------------
-1. 生成用户的密钥对(请注意将username更换为用户名)：
+#####1. 生成用户的密钥对(请注意将[username]更换为用户名)：#####
 
-    $ ssh-keygen -f ~/.ssh/username
+    $ ssh-keygen -f ~/.ssh/[username]
 
-此命令将生成密钥对: ~/.ssh/username 和 ~/.ssh/username.pub
-2. 将公钥文件username.pub发送给管理员
+此命令将生成密钥对: ~/.ssh/[username] 和 ~/.ssh/[username].pub
+#####2. 将公钥文件username.pub发送给管理员#####
 
-3. 在.ssh目录下创建文件 config, 并输入如下内容
-(注意：username为上一步的username):
+#####3. 在.ssh目录下创建文件 config, 并输入如下内容#####
 
     host gitserv                 # gitolite所在机器的别名
     user git                     # 用来访问gitolite库的用户名
     hostname 192.168.2.100       # gitolite所在机器的IP地址
     port 22                      # sshd的端口
     identityfile ~/.ssh/username # 用来访问gitolite库的用户的私钥文件
+                                 # username为上一步的username
     
-4. clone项目库至本地:
+#####4. clone项目库至本地:#####
 
     $ git clone gitserv:testing.git  #testing.git为库名
 
